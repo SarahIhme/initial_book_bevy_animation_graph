@@ -1,0 +1,7 @@
+[package]
+name = "bevy_animation_graph_book"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy_animation_graph = { git = "https://github.com/mbrea-c/bevy_animation_graph", branch = "0.9-uat-bugfixes" }
