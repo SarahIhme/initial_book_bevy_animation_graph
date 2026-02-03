@@ -1,0 +1,54 @@
+(
+    states: [
+        (
+            id: "e79f43d3-5dea-49ce-bd3e-8429065b3de2",
+            label: "run",
+            graph: "animation_graphs/human_simple.animgraph.ron",
+            state_transition: None,
+        ),
+        (
+            id: "a5de8e7d-7d33-4c51-aca9-77dbb0be4667",
+            label: "punch",
+            graph: "animation_graphs/human_simple_punch.animgraph.ron",
+            state_transition: None,
+        ),
+    ],
+    transitions: [
+        (
+            id: "79d87e9f-7ff3-4bb2-b722-f9906d652d79",
+            source: "e79f43d3-5dea-49ce-bd3e-8429065b3de2",
+            target: "a5de8e7d-7d33-4c51-aca9-77dbb0be4667",
+            data: (
+                kind: Immediate,
+            ),
+        ),
+        (
+            id: "75ff42c2-cdbd-46f2-bdf3-9402046534b4",
+            source: "a5de8e7d-7d33-4c51-aca9-77dbb0be4667",
+            target: "e79f43d3-5dea-49ce-bd3e-8429065b3de2",
+            data: (
+                kind: Immediate,
+            ),
+        ),
+    ],
+    start_state: "e79f43d3-5dea-49ce-bd3e-8429065b3de2",
+    node_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {},
+        output_order: {
+            Time: 0,
+            Data("pose"): 1,
+        },
+    ),
+    editor_metadata: (
+        states: {
+            "e79f43d3-5dea-49ce-bd3e-8429065b3de2": (-154.56604, -63.459656),
+            "a5de8e7d-7d33-4c51-aca9-77dbb0be4667": (74.447815, -60.57184),
+        },
+    ),
+)

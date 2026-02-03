@@ -1,0 +1,45 @@
+(
+    nodes: [
+        (
+            id: "46a7a5c1-e63c-4357-832a-139f9fc792a4",
+            name: "New node",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_punch.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        OutputData("pose"): NodeData("46a7a5c1-e63c-4357-832a-139f9fc792a4", "pose"),
+        OutputTime: NodeTime("46a7a5c1-e63c-4357-832a-139f9fc792a4"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {},
+        output_order: {
+            Data("pose"): 0,
+            Time: 1,
+        },
+    ),
+    default_data: {},
+    editor_metadata: (
+        node_positions: {
+            "46a7a5c1-e63c-4357-832a-139f9fc792a4": (326.69183, 351.69223),
+        },
+        input_position: (83.25577, 261.3862),
+        output_position: (560.30133, 237.49088),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)

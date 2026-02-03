@@ -1,0 +1,47 @@
+(
+    nodes: [
+        (
+            id: "cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f",
+            name: "FSM",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::FsmNode": (
+                    fsm: "fsms/punch_fsm.fsm.ron",
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        OutputData("pose"): NodeData("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f", "pose"),
+        OutputTime: NodeTime("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {},
+        output_order: {
+            Time: 0,
+            Data("pose"): 1,
+        },
+    ),
+    default_data: {
+        Passthrough("user_events"): EventQueue((
+            events: [],
+        )),
+    },
+    editor_metadata: (
+        node_positions: {
+            "cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f": (321.0697, 104.89487),
+        },
+        input_position: (63.511353, 89.29675),
+        output_position: (585.9086, 96.76984),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)
