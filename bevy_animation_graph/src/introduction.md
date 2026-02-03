@@ -32,22 +32,22 @@ Create an empty assets directory and add the following subfolders:
 - skeletons
 
 
-Then, lets load it into the graph editor:
+Then, let's load it into the graph editor:
 
 ```
 bevy_animation_graph_editor -a <PATH_TO_ASSETS_DIRECTORY>
 ```
 
-Now, lets create a skeleton asset using the Assets (top left) -> Create -> Skeletons button:
+Now, let's create a skeleton asset using the Assets (top left) -> Create -> Skeletons button:
 
 ![Create menu](introductionScreenshots/01_AssetsCreate.png)
 ![Create skeleton assets](introductionScreenshots/02_create_skeleton.png)
 
-Now, lets create an animation asset using the Assets (top left) -> Create -> Animations button:
+Now, let's create an animation asset using the Assets (top left) -> Create -> Animations button:
 
 ![Create animation asset](introductionScreenshots/03_create_assets.png)
 
-Now, lets create an animation graph using the Assets (top left) -> Create -> Animation Graph button:
+Now, let's create an animation graph using the Assets (top left) -> Create -> Animation Graph button:
 
 ![Create animation graph asset](introductionScreenshots/04_create_anim_graph.png)
 
@@ -63,7 +63,7 @@ On the bottom right of the editor, you see an Animation Graph window where you c
 
 Finally, the last step is to create a scene. This step is not enabled in the animation graph editor yet, so create a file with the following content in the animated_scene folder:
 
-```
+```ron
 (
     source: "models/Animations.glb#Scene0",
     animation_graph: "animation_graphs/human_simple.animgraph.ron",
@@ -100,7 +100,7 @@ Now create a Chain node. Then connect the ouput of the non-mirrored animation to
 
 ![Create Chain node](introductionScreenshots/09_chained_animation.png)
 
-Now you should see both of them playing after another - since it is not looped, you will have to restart the animation_graph_editor to set the time to - and play it from the start,
+Now you should see both of them playing after another - since it is not looped, you will have to restart the animation_graph_editor to set the time to 0 and play it from the start.
 
 ## Loop it
 
