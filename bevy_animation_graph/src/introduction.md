@@ -59,6 +59,8 @@ Now, move the input, clip and output node around to your preferred arrangement.
 
 On the bottom right of the editor, you see an Animation Graph window where you can specify inputs and output. Add a pose and a time output to it (you can add outputs with the + icon and change fields by clicking on them). Then connect the pose and the time output from the ClipNode to the Output node.
 
+IMPORTANT: Press Ctrl+S in order to open the Save menu and save your animation graph! It is not auto-saved.
+
 ![Create basic animation graph](introductionScreenshots/06_basic_graph.png)
 
 Finally, the last step is to create a scene. This step is not enabled in the animation graph editor yet, so create a file with the following content in the animated_scene folder:
@@ -70,6 +72,8 @@ Finally, the last step is to create a scene. This step is not enabled in the ani
     skeleton: "skeletons/HumanSkeleton.skn.ron",
 )
 ```
+
+
 
 Restart your editor. Now select your scene and you should be able to see at least your model loaded in the top right, depending on the size of the model you need to screen in or out of the preview by using your mouse while hovering above the preview. You should be able to see the animation that you are playing in the graph, but if it is a short one and you missed its playing, you should at least see your model loaded correctly in the preview. If you cannot see your model, here are a couple things you could try:
 
