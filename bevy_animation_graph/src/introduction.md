@@ -2,7 +2,7 @@
 
 ## Setup
 
-Install bevy_animation_graph like you would for any rust crate:
+Add bevy_animation_graph like you would for any rust crate to your game:
 
 ```
 cargo add bevy_animation_graph
@@ -18,9 +18,9 @@ cargo install bevy_animation_graph_editor
 
 ## Import your first animation
 
-First, export your character with its animation in the .glb format from Blender or your respective modelling software.
+First, export your character with its animation in the .glb format from Blender or your respective modelling software. 
 
-In my example, I exported half of a run animation. This will enable me to demonstrate the use of some of the nodes. 
+In my example, I exported half of a run animation. This will enable me to demonstrate the use of some of the nodes. Note that for this, the starting and ending frame that I exported are exactly the same pose.
 
 In your project, you are free to organise and name the assets folder up to your preferences. In this tutorial, I will follow the same structure as in the examples and will describe the actions following the same organisation.
 
@@ -113,3 +113,28 @@ Finally, it is time to loop this. Create a LoopNode with default settings. Conne
 ![Create looped animation](introductionScreenshots/10_final_loop.png)
 
 Now you should be able to see your animtion repeated endlessly!
+
+## Include it in your game
+
+But most importantly - how do you actually use this in your game? A very simple example is found in main.rs, but here are the most important things:
+
+Register the plugins (where "assets" is the path to your assets):
+
+```ron
+    App::new()
+        .add_plugins(DefaultPlugins.set(AssetPlugin {
+            file_path: "assets".to_string(),
+            ..default()
+        }))
+        .add_plugins(AnimationGraphPlugin::default())
+```
+
+And then spawn the animated character:
+
+```ron
+    // Animated character
+    commands.spawn((
+        AnimatedSceneHandle::new(asset_server.load("animated_scenes/SimpleHuman.animscn.ron")),
+        Transform::from_xyz(0., 0., 0.),
+    ));
+```

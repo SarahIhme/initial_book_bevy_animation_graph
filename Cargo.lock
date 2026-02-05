@@ -444,6 +444,7 @@ dependencies = [
 name = "bevy_animation_graph_book"
 version = "0.1.0"
 dependencies = [
+ "bevy",
  "bevy_animation_graph",
 ]
 
