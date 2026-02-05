@@ -1,5 +1,5 @@
 (
     source: "models/Animations.glb#Scene0",
-    animation_graph: "animation_graphs/topelevel_fsm.animgraph.ron",
+    animation_graph: "animation_graphs/toplevel_fsm.animgraph.ron",
     skeleton: "skeletons/HumanSkeleton.skn.ron",
 )

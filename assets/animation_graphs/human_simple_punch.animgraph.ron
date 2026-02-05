@@ -1,6 +1,16 @@
 (
     nodes: [
         (
+            id: "c6a24cb1-bc0f-43d2-9015-ff574194dec3",
+            name: "New node",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::LoopNode": (
+                    interpolation_period: 0.0,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
             id: "46a7a5c1-e63c-4357-832a-139f9fc792a4",
             name: "New node",
             inner: {
@@ -14,8 +24,10 @@
         ),
     ],
     edges_inverted: {
-        OutputData("pose"): NodeData("46a7a5c1-e63c-4357-832a-139f9fc792a4", "pose"),
-        OutputTime: NodeTime("46a7a5c1-e63c-4357-832a-139f9fc792a4"),
+        OutputData("pose"): NodeData("c6a24cb1-bc0f-43d2-9015-ff574194dec3", "pose"),
+        OutputTime: NodeTime("c6a24cb1-bc0f-43d2-9015-ff574194dec3"),
+        NodeData("c6a24cb1-bc0f-43d2-9015-ff574194dec3", "pose"): NodeData("46a7a5c1-e63c-4357-832a-139f9fc792a4", "pose"),
+        NodeTime("c6a24cb1-bc0f-43d2-9015-ff574194dec3", "time"): NodeTime("46a7a5c1-e63c-4357-832a-139f9fc792a4"),
     },
     io_spec: (
         input_times: [],
@@ -33,7 +45,8 @@
     default_data: {},
     editor_metadata: (
         node_positions: {
-            "46a7a5c1-e63c-4357-832a-139f9fc792a4": (326.69183, 351.69223),
+            "c6a24cb1-bc0f-43d2-9015-ff574194dec3": (396.22604, 79.66257),
+            "46a7a5c1-e63c-4357-832a-139f9fc792a4": (237.07056, 93.85074),
         },
         input_position: (83.25577, 261.3862),
         output_position: (560.30133, 237.49088),

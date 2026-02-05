@@ -7,7 +7,7 @@
             state_transition: None,
         ),
         (
-            id: "a5de8e7d-7d33-4c51-aca9-77dbb0be4667",
+            id: "b9db3150-1497-4124-906e-74d8aa7b59c2",
             label: "punch",
             graph: "animation_graphs/human_simple_punch.animgraph.ron",
             state_transition: None,
@@ -15,16 +15,16 @@
     ],
     transitions: [
         (
-            id: "79d87e9f-7ff3-4bb2-b722-f9906d652d79",
+            id: "5c02e58e-4e48-4522-ac30-d60ffb471196",
             source: "e79f43d3-5dea-49ce-bd3e-8429065b3de2",
-            target: "a5de8e7d-7d33-4c51-aca9-77dbb0be4667",
+            target: "b9db3150-1497-4124-906e-74d8aa7b59c2",
             data: (
                 kind: Immediate,
             ),
         ),
         (
-            id: "75ff42c2-cdbd-46f2-bdf3-9402046534b4",
-            source: "a5de8e7d-7d33-4c51-aca9-77dbb0be4667",
+            id: "5532a9d2-8b1e-4f86-a98b-1bc6d3278f72",
+            source: "b9db3150-1497-4124-906e-74d8aa7b59c2",
             target: "e79f43d3-5dea-49ce-bd3e-8429065b3de2",
             data: (
                 kind: Immediate,
@@ -47,8 +47,8 @@
     ),
     editor_metadata: (
         states: {
-            "e79f43d3-5dea-49ce-bd3e-8429065b3de2": (-154.56604, -63.459656),
-            "a5de8e7d-7d33-4c51-aca9-77dbb0be4667": (74.447815, -60.57184),
+            "e79f43d3-5dea-49ce-bd3e-8429065b3de2": (-310.6589, -106.45392),
+            "b9db3150-1497-4124-906e-74d8aa7b59c2": (-86.71753, -111.817474),
         },
     ),
 )

@@ -5,24 +5,29 @@
             name: "FSM",
             inner: {
                 "bevy_animation_graph::builtin_nodes::FsmNode": (
-                    fsm: "fsms/punch_fsm.fsm.ron",
+                    fsm: "fsm/punch_fsm.fsm.ron",
                 ),
             },
-            should_debug: false,
+            should_debug: true,
         ),
     ],
     edges_inverted: {
         OutputData("pose"): NodeData("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f", "pose"),
         OutputTime: NodeTime("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f"),
+        NodeData("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f", "driver events"): InputData(Passthrough("user_events")),
     },
     io_spec: (
         input_times: [],
-        input_data: {},
+        input_data: {
+            Passthrough("user_events"): EventQueue,
+        },
         output_time: true,
         output_data: {
             "pose": Pose,
         },
-        input_order: {},
+        input_order: {
+            Data(Passthrough("user_events")): 0,
+        },
         output_order: {
             Time: 0,
             Data("pose"): 1,
