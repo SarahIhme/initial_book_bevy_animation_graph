@@ -10,7 +10,7 @@ cargo add bevy_animation_graph
 
 or add it to your Cargo.toml.
 
-And then install the newest bevy_animation_graph_editor like this for the latest crates.io version:
+And then install the newest bevy_animation_graph_editor like this for the latest crates.io version (or use --version in order to specify the version you want e.g. the one you use in your game):
 
 ```
 cargo install bevy_animation_graph_editor
