@@ -1,8 +1,8 @@
 (
     source: GltfNamed(
-        path: "models/Animations.glb",
+        path: "models/human_animated.glb",
         animation_name: "Run",
     ),
-    skeleton: "skeletons/HumanSkeleton.skn.ron",
+    skeleton: "skeletons/human_skeleton.skn.ron",
     event_tracks: {},
 )

@@ -59,7 +59,7 @@ fn setup(
 
     // Animated character
     commands.spawn((
-        AnimatedSceneHandle::new(asset_server.load("animated_scenes/SimpleHuman.animscn.ron")),
+        AnimatedSceneHandle::new(asset_server.load("animated_scenes/human_run.animscn.ron")),
         Transform::from_xyz(0., 0., 0.),
     ));
 }

@@ -1,3 +1,3 @@
 # Summary
 
-- [Setup and your first animation](./introduction.md)
+- [Setup and run your first animation](./chapter1.md)

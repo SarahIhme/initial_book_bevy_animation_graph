@@ -1,5 +1,0 @@
-(
-    source: "models/Animations.glb#Scene0",
-    animation_graph: "animation_graphs/human_simple.animgraph.ron",
-    skeleton: "skeletons/HumanSkeleton.skn.ron",
-)
