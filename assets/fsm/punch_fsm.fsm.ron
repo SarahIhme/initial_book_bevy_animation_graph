@@ -20,6 +20,8 @@
             target: "b9db3150-1497-4124-906e-74d8aa7b59c2",
             data: (
                 kind: Immediate,
+                ignore_external_events: false,
+                reset_target_state: true,
             ),
         ),
         (
@@ -28,6 +30,8 @@
             target: "e79f43d3-5dea-49ce-bd3e-8429065b3de2",
             data: (
                 kind: Immediate,
+                ignore_external_events: true,
+                reset_target_state: false,
             ),
         ),
     ],
@@ -47,7 +51,7 @@
     ),
     editor_metadata: (
         states: {
-            "e79f43d3-5dea-49ce-bd3e-8429065b3de2": (-310.6589, -106.45392),
+            "e79f43d3-5dea-49ce-bd3e-8429065b3de2": (-297.88937, -112.93829),
             "b9db3150-1497-4124-906e-74d8aa7b59c2": (-86.71753, -111.817474),
         },
     ),

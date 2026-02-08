@@ -1,20 +1,20 @@
 (
     nodes: [
         (
-            id: "cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f",
-            name: "FSM",
+            id: "6c60cd15-f9b0-45ac-9e47-44e52350564e",
+            name: "",
             inner: {
                 "bevy_animation_graph::builtin_nodes::FsmNode": (
                     fsm: "fsm/punch_fsm.fsm.ron",
                 ),
             },
-            should_debug: true,
+            should_debug: false,
         ),
     ],
     edges_inverted: {
-        OutputData("pose"): NodeData("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f", "pose"),
-        OutputTime: NodeTime("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f"),
-        NodeData("cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f", "driver events"): InputData(Passthrough("user_events")),
+        OutputData("pose"): NodeData("6c60cd15-f9b0-45ac-9e47-44e52350564e", "pose"),
+        NodeData("6c60cd15-f9b0-45ac-9e47-44e52350564e", "driver_events"): InputData(Passthrough("user_events")),
+        OutputTime: NodeTime("6c60cd15-f9b0-45ac-9e47-44e52350564e"),
     },
     io_spec: (
         input_times: [],
@@ -33,17 +33,13 @@
             Data("pose"): 1,
         },
     ),
-    default_data: {
-        Passthrough("user_events"): EventQueue((
-            events: [],
-        )),
-    },
+    default_data: {},
     editor_metadata: (
         node_positions: {
-            "cf7675cc-1bb4-4c22-ba77-cb0f6b7fd84f": (321.0697, 104.89487),
+            "6c60cd15-f9b0-45ac-9e47-44e52350564e": (60.566406, 155.70703),
         },
-        input_position: (63.511353, 89.29675),
-        output_position: (585.9086, 96.76984),
+        input_position: (-105.02344, 162.41797),
+        output_position: (268.03125, 155.86719),
         input_param_order: {},
         input_time_order: {},
         output_data_order: {},
