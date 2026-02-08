@@ -1,0 +1,107 @@
+(
+    nodes: [
+        (
+            id: "46c7cd40-caf1-4d55-947f-bb3a7855ad7e",
+            name: "ChainedRun",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ChainNode": (
+                    interpolation_period: 0.0,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "a10028f7-6296-453c-adb8-d75efec6fd22",
+            name: "LoopedRun",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::LoopNode": (
+                    interpolation_period: 0.0,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "5353221f-6baa-4747-a103-8997f30c8690",
+            name: "Run",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_run.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "0e8fa82a-d421-46f7-9166-c56b0203fa30",
+            name: "FlippedRun",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::FlipLRNode": (
+                    config: (
+                        name_mapper: Pattern((
+                            key_1: "L",
+                            key_2: "R",
+                            pattern_before: "^.*",
+                            pattern_after: "$",
+                        )),
+                        mode: MirrorX,
+                    ),
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "9f423e2c-440a-41ee-ad65-ca144cf06bed",
+            name: "Run",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_run.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        OutputData("pose"): NodeData("a10028f7-6296-453c-adb8-d75efec6fd22", "pose"),
+        OutputTime: NodeTime("a10028f7-6296-453c-adb8-d75efec6fd22"),
+        NodeData("0e8fa82a-d421-46f7-9166-c56b0203fa30", "pose"): NodeData("9f423e2c-440a-41ee-ad65-ca144cf06bed", "pose"),
+        NodeData("a10028f7-6296-453c-adb8-d75efec6fd22", "pose"): NodeData("46c7cd40-caf1-4d55-947f-bb3a7855ad7e", "pose"),
+        NodeTime("a10028f7-6296-453c-adb8-d75efec6fd22", "time"): NodeTime("46c7cd40-caf1-4d55-947f-bb3a7855ad7e"),
+        NodeData("46c7cd40-caf1-4d55-947f-bb3a7855ad7e", "pose_a"): NodeData("5353221f-6baa-4747-a103-8997f30c8690", "pose"),
+        NodeTime("46c7cd40-caf1-4d55-947f-bb3a7855ad7e", "time_b"): NodeTime("0e8fa82a-d421-46f7-9166-c56b0203fa30"),
+        NodeTime("46c7cd40-caf1-4d55-947f-bb3a7855ad7e", "time_a"): NodeTime("5353221f-6baa-4747-a103-8997f30c8690"),
+        NodeTime("0e8fa82a-d421-46f7-9166-c56b0203fa30", "time"): NodeTime("9f423e2c-440a-41ee-ad65-ca144cf06bed"),
+        NodeData("46c7cd40-caf1-4d55-947f-bb3a7855ad7e", "pose_b"): NodeData("0e8fa82a-d421-46f7-9166-c56b0203fa30", "pose"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {},
+        output_order: {
+            Data("pose"): 1,
+            Time: 2,
+        },
+    ),
+    default_data: {},
+    editor_metadata: (
+        node_positions: {
+            "46c7cd40-caf1-4d55-947f-bb3a7855ad7e": (348.57867, 205.81339),
+            "a10028f7-6296-453c-adb8-d75efec6fd22": (499.568, 206.23395),
+            "5353221f-6baa-4747-a103-8997f30c8690": (39.44281, 165.7764),
+            "0e8fa82a-d421-46f7-9166-c56b0203fa30": (177.57797, 377.92905),
+            "9f423e2c-440a-41ee-ad65-ca144cf06bed": (31.158936, 362.198),
+        },
+        input_position: (24.272583, 14.248535),
+        output_position: (644.0877, 205.44943),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)

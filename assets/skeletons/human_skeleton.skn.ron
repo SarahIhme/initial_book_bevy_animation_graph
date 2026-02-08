@@ -1,6 +1,6 @@
 (
     source: Gltf(
-        source: "models/Animations.glb",
+        source: "models/human_animated.glb",
         label: "Scene0",
     ),
 )
