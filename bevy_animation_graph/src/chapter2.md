@@ -4,7 +4,7 @@
 
 This chapter assumes you know how to create an Animation asset, an AnimationGraph asset, a `ClipNode` and have an already existing AnimationGraph containing a looped Running animation (which has been shown in the previous chapter). In addition to that, you should also have a simple attack animation in your .glb file - for example, I have a punching animation.
 
-> **_IMPORTANT:_** I will not mention that you need to remember to save throughout this tutorial, but please do this whenever you complete changing an animation graph or an fsm! 
+> **_IMPORTANT:_** I will not mention that you need to remember to save throughout this tutorial, but please do this whenever you finish changing an animation graph or an FSM! 
 
 ## Create Punch animation graph
 
@@ -45,6 +45,8 @@ Like for any FSM, we also need to provide the start state in the state machine I
 ![Set start state](chapter2Screenshots/05_add_start_state.png)
 
 Now we need to add the transition from `Run` to `Punch`: right-click again and click on `Switch to transition creation`. Select `Run` as the source state and `Punch` as the target state. Remember that we only play the punch animation once - so for this graph, our time needs to be reset to 0 in order for the animation to actually be visible. In order to do this, tick the `reset target state` box. Leave the rest at their default.
+
+> **_NOTE:_** You can also enable `ignore external events` to make that transition only respond to internal events (i.e. events output from graphs which are assigned to states or transitions in that FSM). For example, if you only fire an "attack" event on a single frame, you'll likely not want the FSM to immediately transition back to a locomotion state the frame right after. 
 
 ![Run to Punch transition](chapter2Screenshots/06_run_to_punch_transition.png)
 
