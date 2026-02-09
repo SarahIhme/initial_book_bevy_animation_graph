@@ -1,0 +1,61 @@
+(
+    nodes: [
+        (
+            id: "e18d499c-df19-44b4-bca4-a33afbb53aed",
+            name: "EndOfAnimation",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::MapEventsNode": (
+                    map_from: AnimationClipFinished,
+                    map_to: TransitionToStateLabel("Run"),
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "a26c666b-a11d-49da-9858-621937cbf4fd",
+            name: "Punch",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_punch.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        NodeData("e18d499c-df19-44b4-bca4-a33afbb53aed", "events"): NodeData("a26c666b-a11d-49da-9858-621937cbf4fd", "events"),
+        OutputData("pose"): NodeData("a26c666b-a11d-49da-9858-621937cbf4fd", "pose"),
+        OutputTime: NodeTime("a26c666b-a11d-49da-9858-621937cbf4fd"),
+        OutputData("driver_events"): NodeData("e18d499c-df19-44b4-bca4-a33afbb53aed", "events"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+            "driver_events": EventQueue,
+        },
+        input_order: {},
+        output_order: {
+            Data("pose"): 0,
+            Time: 1,
+            Data("driver_events"): 2,
+        },
+    ),
+    default_data: {},
+    editor_metadata: (
+        node_positions: {
+            "e18d499c-df19-44b4-bca4-a33afbb53aed": (367.01465, 315.97314),
+            "a26c666b-a11d-49da-9858-621937cbf4fd": (201.88928, 170.23785),
+        },
+        input_position: (41.912598, 203.24747),
+        output_position: (523.2294, 160.77017),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)
