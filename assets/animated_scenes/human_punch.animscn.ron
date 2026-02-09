@@ -1,0 +1,5 @@
+(
+    source: "models/human_animated.glb#Scene0",
+    animation_graph: "animation_graphs/human_punch.animgraph.ron",
+    skeleton: "skeletons/human_skeleton.skn.ron",
+)

@@ -1,0 +1,8 @@
+(
+    source: GltfNamed(
+        path: "models/human_animated.glb",
+        animation_name: "Punch",
+    ),
+    skeleton: "skeletons/human_skeleton.skn.ron",
+    event_tracks: {},
+)

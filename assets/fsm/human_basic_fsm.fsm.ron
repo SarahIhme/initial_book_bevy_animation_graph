@@ -1,0 +1,64 @@
+(
+    states: [
+        (
+            id: "69b9689a-2d55-4c02-a4a5-001d45ec5573",
+            label: "Punch",
+            graph: "animation_graphs/human_punch.animgraph.ron",
+            state_transition: None,
+        ),
+        (
+            id: "3f3de741-6fe0-4e8d-8294-2a21a77999a3",
+            label: "Run",
+            graph: "animation_graphs/human_run.animgraph.ron",
+            state_transition: None,
+        ),
+    ],
+    transitions: [
+        (
+            id: "090045fa-64a8-4ace-9f31-a7dfc88d93a2",
+            source: "69b9689a-2d55-4c02-a4a5-001d45ec5573",
+            target: "3f3de741-6fe0-4e8d-8294-2a21a77999a3",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.5),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+        (
+            id: "82b95b3d-30b2-4603-bc25-27c169a22108",
+            source: "3f3de741-6fe0-4e8d-8294-2a21a77999a3",
+            target: "69b9689a-2d55-4c02-a4a5-001d45ec5573",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.1),
+                ),
+                ignore_external_events: false,
+                reset_target_state: true,
+            ),
+        ),
+    ],
+    start_state: "3f3de741-6fe0-4e8d-8294-2a21a77999a3",
+    node_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {},
+        output_order: {
+            Data("pose"): 1,
+            Time: 2,
+        },
+    ),
+    editor_metadata: (
+        states: {
+            "69b9689a-2d55-4c02-a4a5-001d45ec5573": (77.70593, 3.1175232),
+            "3f3de741-6fe0-4e8d-8294-2a21a77999a3": (-130.03674, -5.5160522),
+        },
+    ),
+)
