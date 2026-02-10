@@ -70,6 +70,8 @@ Create a new animation graph called `animation_graphs/human_basic_fsm.animgraph.
 
 You will notice that this node takes `driver_events` as input - this will be the events that are used to trigger transitions. These need to come from another node in the graph, in our case Inputs directly - so click on it and add an input called user_events of type Data - Passthrough - EventQueue and connect the edges.
 
+> **_NOTE:_** This needs to be called user_events in order for it to receive the events that get passed from the game. It also needs this name if you want to do testing from the editor UI, since the events that you fire (described below) will be added to the user_event EventQueue.
+
 In addition, add the pose and time outputs as usual and connect them.
 
 ![Final FSM Animation Graph](chapter2Screenshots/11_final_fsm_graph.png)
