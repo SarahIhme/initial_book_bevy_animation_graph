@@ -4,5 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy = "0.17.0"
-bevy_animation_graph = { git = "https://github.com/mbrea-c/bevy_animation_graph", branch = "0.9-uat-bugfixes" }
+bevy = "0.18.0"
+bevy_animation_graph = { git = "https://github.com/SarahIhme/bevy_animation_graph.git", rev = "7810118a626eb3fee4ce546e3bb0b5b68efd42ce" }
+bevy_animation_graph_editor = { git = "https://github.com/SarahIhme/bevy_animation_graph.git", rev = "7810118a626eb3fee4ce546e3bb0b5b68efd42ce" }
