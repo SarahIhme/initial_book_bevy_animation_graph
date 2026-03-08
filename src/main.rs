@@ -5,6 +5,7 @@ use std::f32::consts::PI;
 
 use bevy::{light::CascadeShadowConfigBuilder, prelude::*};
 use bevy_animation_graph::{AnimationGraphPlugin, core::animated_scene::AnimatedSceneHandle};
+use bevy_animation_graph_book::locomotion_blend_parameters_node::LocomotionBlendParametersNode;
 
 fn main() {
     App::new()
@@ -13,7 +14,8 @@ fn main() {
             ..default()
         }))
         .add_plugins(AnimationGraphPlugin::default())
-        .insert_resource(AmbientLight {
+        .register_type::<LocomotionBlendParametersNode>()
+        .insert_resource(GlobalAmbientLight {
             color: Color::WHITE,
             brightness: 0.1,
             ..default()

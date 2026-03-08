@@ -1,0 +1,30 @@
+(
+    source: GltfNamed(
+        path: "models/human_animated.glb",
+        animation_name: "Walk",
+    ),
+    skeleton: "skeletons/human_skeleton.skn.ron",
+    event_tracks: {
+        "FootDown": (
+            name: "FootDown",
+            events: [
+                (
+                    id: "09d8f493-5ae3-452d-be2a-b5946189883d",
+                    value: (
+                        event: StringId("LeftFootDown"),
+                        start_time: 0.0,
+                        end_time: 0.0,
+                    ),
+                ),
+                (
+                    id: "bdacd8b9-2a43-4bcc-bb9b-8c2b9da01c6b",
+                    value: (
+                        event: StringId("RightFootDown"),
+                        start_time: 0.5,
+                        end_time: 0.5,
+                    ),
+                ),
+            ],
+        ),
+    },
+)

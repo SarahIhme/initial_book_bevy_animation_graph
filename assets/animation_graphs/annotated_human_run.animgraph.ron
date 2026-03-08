@@ -1,0 +1,132 @@
+(
+    nodes: [
+        (
+            id: "8c685820-0a63-4ca6-877f-31526a73083b",
+            name: "Run",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_run.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "e6edfcf0-afde-413e-b4c7-bf8a0999fb81",
+            name: "Mirror",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::FlipLRNode": (
+                    config: (
+                        name_mapper: Pattern((
+                            key_1: "L",
+                            key_2: "R",
+                            pattern_before: "^.*",
+                            pattern_after: "$",
+                        )),
+                        mode: MirrorX,
+                    ),
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "626f9eed-104f-42f9-9b13-fe333ec0596e",
+            name: "Run",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_run.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "e22f4637-b852-4523-a153-54e6d19d113c",
+            name: "Annotate",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::EventMarkupNode": (
+                    event_tracks: {
+                        "FootDown": (
+                            name: "FootDown",
+                            events: [
+                                (
+                                    id: "d7d721df-bf0b-4f9b-997b-8f2644e1f64e",
+                                    value: (
+                                        event: StringId("LeftFootDown"),
+                                        start_time: 0.166,
+                                        end_time: 0.17,
+                                    ),
+                                ),
+                                (
+                                    id: "90bdac77-3227-41f5-8bab-29c9256f21fb",
+                                    value: (
+                                        event: StringId("RightFootDown"),
+                                        start_time: 0.75,
+                                        end_time: 0.75,
+                                    ),
+                                ),
+                            ],
+                        ),
+                    },
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "c431ccd9-887a-496e-bc31-08380279b7be",
+            name: "Chain",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ChainNode": (
+                    interpolation_period: 0.0,
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        NodeData("e6edfcf0-afde-413e-b4c7-bf8a0999fb81", "pose"): NodeData("626f9eed-104f-42f9-9b13-fe333ec0596e", "pose"),
+        OutputData("pose"): NodeData("e22f4637-b852-4523-a153-54e6d19d113c", "pose"),
+        OutputTime: NodeTime("e22f4637-b852-4523-a153-54e6d19d113c"),
+        OutputData("events"): NodeData("e22f4637-b852-4523-a153-54e6d19d113c", "events"),
+        NodeTime("e22f4637-b852-4523-a153-54e6d19d113c", "time"): NodeTime("c431ccd9-887a-496e-bc31-08380279b7be"),
+        NodeTime("c431ccd9-887a-496e-bc31-08380279b7be", "time_b"): NodeTime("8c685820-0a63-4ca6-877f-31526a73083b"),
+        NodeTime("c431ccd9-887a-496e-bc31-08380279b7be", "time_a"): NodeTime("e6edfcf0-afde-413e-b4c7-bf8a0999fb81"),
+        NodeData("c431ccd9-887a-496e-bc31-08380279b7be", "pose_b"): NodeData("8c685820-0a63-4ca6-877f-31526a73083b", "pose"),
+        NodeData("e22f4637-b852-4523-a153-54e6d19d113c", "pose"): NodeData("c431ccd9-887a-496e-bc31-08380279b7be", "pose"),
+        NodeTime("e6edfcf0-afde-413e-b4c7-bf8a0999fb81", "time"): NodeTime("626f9eed-104f-42f9-9b13-fe333ec0596e"),
+        NodeData("c431ccd9-887a-496e-bc31-08380279b7be", "pose_a"): NodeData("e6edfcf0-afde-413e-b4c7-bf8a0999fb81", "pose"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+            "events": EventQueue,
+        },
+        input_order: {},
+        output_order: {
+            Data("pose"): 0,
+            Time: 2,
+            Data("events"): 1,
+        },
+    ),
+    default_data: {},
+    editor_metadata: (
+        node_positions: {
+            "8c685820-0a63-4ca6-877f-31526a73083b": (177.37012, 33.892),
+            "e6edfcf0-afde-413e-b4c7-bf8a0999fb81": (196.3905, 280.00076),
+            "626f9eed-104f-42f9-9b13-fe333ec0596e": (48.563354, 275.83563),
+            "e22f4637-b852-4523-a153-54e6d19d113c": (500.24683, 154.61565),
+            "c431ccd9-887a-496e-bc31-08380279b7be": (357.03052, 142.15775),
+        },
+        input_position: (30.857666, 30.800964),
+        output_position: (641.43854, 155.12799),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)

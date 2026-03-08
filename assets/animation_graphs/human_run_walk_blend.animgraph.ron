@@ -1,0 +1,118 @@
+(
+    nodes: [
+        (
+            id: "1ce1586a-0172-4468-bdf0-7c914a8626d8",
+            name: "WalkRunBlend",
+            inner: {
+                "bevy_animation_graph_book::locomotion_blend_parameters_node::LocomotionBlendParametersNode": (),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "2c9fabe6-11c6-43b5-ac67-b35a371e297f",
+            name: "Loop",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::LoopNode": (
+                    interpolation_period: 0.0,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "c7509879-949b-4b1e-a85f-aada1c351cd3",
+            name: "Speed",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::SpeedNode": (),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "9244b0a4-8b66-4e29-a6b9-71f7154a5f1d",
+            name: "Walk",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_walk.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "586de194-08ea-449c-8ec0-061258800234",
+            name: "AnnotatedRun",
+            inner: {
+                "bevy_animation_graph_builtin_nodes::graph_node::GraphNode": (
+                    graph: "animation_graphs/annotated_human_run.animgraph.ron",
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "8a235e1e-e588-4174-aa8b-3e8a67ce4ffc",
+            name: "WalkRunBlend",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::BlendNode": (
+                    mode: LinearInterpolate,
+                    sync_mode: EventTrack("FootDown"),
+                    blend_primary: HighestWeight,
+                    use_bone_mask: false,
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        NodeData("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "pose_a"): NodeData("9244b0a4-8b66-4e29-a6b9-71f7154a5f1d", "pose"),
+        OutputData("pose"): NodeData("c7509879-949b-4b1e-a85f-aada1c351cd3", "pose"),
+        NodeData("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "events_a"): NodeData("9244b0a4-8b66-4e29-a6b9-71f7154a5f1d", "events"),
+        NodeData("c7509879-949b-4b1e-a85f-aada1c351cd3", "pose"): NodeData("2c9fabe6-11c6-43b5-ac67-b35a371e297f", "pose"),
+        NodeTime("2c9fabe6-11c6-43b5-ac67-b35a371e297f", "time"): NodeTime("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc"),
+        NodeTime("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "time_a"): NodeTime("9244b0a4-8b66-4e29-a6b9-71f7154a5f1d"),
+        NodeData("2c9fabe6-11c6-43b5-ac67-b35a371e297f", "pose"): NodeData("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "pose"),
+        NodeTime("c7509879-949b-4b1e-a85f-aada1c351cd3", "time"): NodeTime("2c9fabe6-11c6-43b5-ac67-b35a371e297f"),
+        NodeData("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "factor"): NodeData("1ce1586a-0172-4468-bdf0-7c914a8626d8", "blend_factor"),
+        NodeData("1ce1586a-0172-4468-bdf0-7c914a8626d8", "target_speed"): InputData(Passthrough("speed")),
+        OutputTime: NodeTime("c7509879-949b-4b1e-a85f-aada1c351cd3"),
+        NodeData("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "events_b"): NodeData("586de194-08ea-449c-8ec0-061258800234", "events"),
+        NodeTime("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "time_b"): NodeTime("586de194-08ea-449c-8ec0-061258800234"),
+        NodeData("8a235e1e-e588-4174-aa8b-3e8a67ce4ffc", "pose_b"): NodeData("586de194-08ea-449c-8ec0-061258800234", "pose"),
+        NodeData("c7509879-949b-4b1e-a85f-aada1c351cd3", "speed"): NodeData("1ce1586a-0172-4468-bdf0-7c914a8626d8", "speed_factor"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {
+            Passthrough("speed"): F32,
+        },
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {
+            Data(Passthrough("speed")): 0,
+        },
+        output_order: {
+            Data("pose"): 0,
+            Time: 1,
+        },
+    ),
+    default_data: {
+        Passthrough("speed"): F32(2.5),
+    },
+    editor_metadata: (
+        node_positions: {
+            "1ce1586a-0172-4468-bdf0-7c914a8626d8": (27.91278, 264.23044),
+            "2c9fabe6-11c6-43b5-ac67-b35a371e297f": (580.27856, 135.77466),
+            "c7509879-949b-4b1e-a85f-aada1c351cd3": (446.96954, 376.90344),
+            "9244b0a4-8b66-4e29-a6b9-71f7154a5f1d": (203.71918, 21.013275),
+            "586de194-08ea-449c-8ec0-061258800234": (205.52197, 207.20496),
+            "8a235e1e-e588-4174-aa8b-3e8a67ce4ffc": (403.12146, 132.83502),
+        },
+        input_position: (11.033569, 36.97464),
+        output_position: (635.0441, 349.9201),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)
