@@ -88,7 +88,12 @@ fn setup(
     let player = commands
         .spawn((
             // Add the character controller configuration. We'll use the default settings for now.
-            CharacterController::default(),
+            CharacterController {
+                acceleration_hz: 3.,
+                speed: 8.,
+                max_speed: 15.,
+                ..Default::default()
+            },
             // The KCC currently behaves best when using a cylinder
             Collider::cylinder(0.7, 1.8),
             Transform::from_xyz(0.0, 20.0, 0.0),
