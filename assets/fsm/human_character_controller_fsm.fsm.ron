@@ -1,0 +1,51 @@
+(
+    states: [
+        (
+            id: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
+            label: "Punch",
+            graph: "animation_graphs/human_punch.animgraph.ron",
+            state_transition: Some((
+                kind: Immediate,
+                ignore_external_events: false,
+                reset_target_state: true,
+            )),
+        ),
+        (
+            id: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
+            label: "Idle",
+            graph: "animation_graphs/idle.animgraph.ron",
+            state_transition: Some((
+                kind: Immediate,
+                ignore_external_events: false,
+                reset_target_state: true,
+            )),
+        ),
+        (
+            id: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            label: "Move",
+            graph: "animation_graphs/character_controller.animgraph.ron",
+            state_transition: Some((
+                kind: Immediate,
+                ignore_external_events: false,
+                reset_target_state: true,
+            )),
+        ),
+    ],
+    transitions: [],
+    start_state: "00000000-0000-0000-0000-000000000000",
+    node_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: false,
+        output_data: {},
+        input_order: {},
+        output_order: {},
+    ),
+    editor_metadata: (
+        states: {
+            "509ac9d3-0e38-4962-a53b-85f80efd16d3": (130.66058, -103.990295),
+            "6339e21f-a061-4dd7-90f5-9018a6478fbb": (-145.51495, -103.43323),
+            "d7cfb660-e46d-443a-bd40-c26e8cfff565": (41.897217, 9.613037),
+        },
+    ),
+)

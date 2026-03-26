@@ -1,0 +1,58 @@
+(
+    nodes: [
+        (
+            id: "34354dfc-840f-4f44-87cc-c9ee4a1341be",
+            name: "Loop",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::LoopNode": (
+                    interpolation_period: 0.0,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "76636a2e-0672-4449-87c4-3f0a1fe76a37",
+            name: "Idle",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_idle.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        NodeTime("34354dfc-840f-4f44-87cc-c9ee4a1341be", "time"): NodeTime("76636a2e-0672-4449-87c4-3f0a1fe76a37"),
+        OutputData("pose"): NodeData("34354dfc-840f-4f44-87cc-c9ee4a1341be", "pose"),
+        OutputTime: NodeTime("34354dfc-840f-4f44-87cc-c9ee4a1341be"),
+        NodeData("34354dfc-840f-4f44-87cc-c9ee4a1341be", "pose"): NodeData("76636a2e-0672-4449-87c4-3f0a1fe76a37", "pose"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {},
+        output_order: {
+            Data("pose"): 0,
+            Time: 1,
+        },
+    ),
+    default_data: {},
+    editor_metadata: (
+        node_positions: {
+            "34354dfc-840f-4f44-87cc-c9ee4a1341be": (370.69672, 138.20169),
+            "76636a2e-0672-4449-87c4-3f0a1fe76a37": (203.92883, 136.13516),
+        },
+        input_position: (58.338684, 146.54129),
+        output_position: (573.6497, 139.6619),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)

@@ -646,7 +646,7 @@ dependencies = [
 [[package]]
 name = "bevy_animation_graph"
 version = "0.10.0"
-source = "git+https://github.com/SarahIhme/bevy_animation_graph.git?rev=7810118a626eb3fee4ce546e3bb0b5b68efd42ce#7810118a626eb3fee4ce546e3bb0b5b68efd42ce"
+source = "git+https://github.com/mbrea-c/bevy_animation_graph.git?rev=36d372f30bbe7e1c19bbeb126db5a5d46055f839#36d372f30bbe7e1c19bbeb126db5a5d46055f839"
 dependencies = [
  "bevy",
  "bevy_animation_graph_builtin_nodes",
@@ -676,7 +676,7 @@ dependencies = [
 [[package]]
 name = "bevy_animation_graph_builtin_nodes"
 version = "0.10.0"
-source = "git+https://github.com/SarahIhme/bevy_animation_graph.git?rev=7810118a626eb3fee4ce546e3bb0b5b68efd42ce#7810118a626eb3fee4ce546e3bb0b5b68efd42ce"
+source = "git+https://github.com/mbrea-c/bevy_animation_graph.git?rev=36d372f30bbe7e1c19bbeb126db5a5d46055f839#36d372f30bbe7e1c19bbeb126db5a5d46055f839"
 dependencies = [
  "bevy",
  "bevy_animation_graph_core",
@@ -693,7 +693,7 @@ dependencies = [
 [[package]]
 name = "bevy_animation_graph_core"
 version = "0.10.0"
-source = "git+https://github.com/SarahIhme/bevy_animation_graph.git?rev=7810118a626eb3fee4ce546e3bb0b5b68efd42ce#7810118a626eb3fee4ce546e3bb0b5b68efd42ce"
+source = "git+https://github.com/mbrea-c/bevy_animation_graph.git?rev=36d372f30bbe7e1c19bbeb126db5a5d46055f839#36d372f30bbe7e1c19bbeb126db5a5d46055f839"
 dependencies = [
  "avian3d 0.5.0",
  "bevy",
@@ -710,7 +710,7 @@ dependencies = [
 [[package]]
 name = "bevy_animation_graph_editor"
 version = "0.10.0"
-source = "git+https://github.com/SarahIhme/bevy_animation_graph.git?rev=7810118a626eb3fee4ce546e3bb0b5b68efd42ce#7810118a626eb3fee4ce546e3bb0b5b68efd42ce"
+source = "git+https://github.com/mbrea-c/bevy_animation_graph.git?rev=36d372f30bbe7e1c19bbeb126db5a5d46055f839#36d372f30bbe7e1c19bbeb126db5a5d46055f839"
 dependencies = [
  "bevy",
  "bevy-inspector-egui",
@@ -732,7 +732,7 @@ dependencies = [
 [[package]]
 name = "bevy_animation_graph_proc_macros"
 version = "0.10.0"
-source = "git+https://github.com/SarahIhme/bevy_animation_graph.git?rev=7810118a626eb3fee4ce546e3bb0b5b68efd42ce#7810118a626eb3fee4ce546e3bb0b5b68efd42ce"
+source = "git+https://github.com/mbrea-c/bevy_animation_graph.git?rev=36d372f30bbe7e1c19bbeb126db5a5d46055f839#36d372f30bbe7e1c19bbeb126db5a5d46055f839"
 dependencies = [
  "quote",
  "syn 2.0.117",

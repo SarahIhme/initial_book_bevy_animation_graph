@@ -100,7 +100,7 @@ fn setup(
             children![(
                 Transform::from_xyz(0., -0.9, 0.),
                 AnimatedSceneHandle::new(
-                    asset_server.load("animated_scenes/human_run_walk.animscn.ron")
+                    asset_server.load("animated_scenes/human_character_controller.animscn.ron")
                 ),
                 CharacterControllerScene
             )],
@@ -156,9 +156,11 @@ fn pass_speed_to_animgraph(
     let Ok(mut player) = animation_players.get_mut(player_entity) else {
         return;
     };
-    let velocity_val = velocity.xz().length();
-    //println!("{velocity_val}");
+    let velocity_vec = velocity.zx();
+    let velocity_val = velocity_vec.length();
+    // println!("{velocity_val}");
 
+    player.set_input_data("speedVec", DataValue::from(velocity_vec));
     player.set_input_data("speed", DataValue::from(velocity_val));
 }
 
