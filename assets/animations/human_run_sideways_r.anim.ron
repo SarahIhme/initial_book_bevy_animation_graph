@@ -1,0 +1,30 @@
+(
+    source: GltfNamed(
+        path: "models/human_animated.glb",
+        animation_name: "RunSidewaysR",
+    ),
+    skeleton: "skeletons/human_skeleton.skn.ron",
+    event_tracks: {
+        "FootDown": (
+            name: "FootDown",
+            events: [
+                (
+                    id: "50efbda9-9fcb-4ec1-910f-25dc140fb419",
+                    value: (
+                        event: StringId("RightFootDown"),
+                        start_time: 0.166,
+                        end_time: 0.166,
+                    ),
+                ),
+                (
+                    id: "96ce982e-b61a-46b1-a80b-987c128692cf",
+                    value: (
+                        event: StringId("LeftFootDown"),
+                        start_time: 0.75,
+                        end_time: 0.75,
+                    ),
+                ),
+            ],
+        ),
+    },
+)
