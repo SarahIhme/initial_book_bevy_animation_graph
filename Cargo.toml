@@ -5,8 +5,8 @@ edition = "2024"
 
 [dependencies]
 bevy = "0.18.0"
-bevy_animation_graph = { git = "https://github.com/mbrea-c/bevy_animation_graph.git", rev = "36d372f30bbe7e1c19bbeb126db5a5d46055f839", default-features = false }
-bevy_animation_graph_editor = { git = "https://github.com/mbrea-c/bevy_animation_graph.git", rev = "36d372f30bbe7e1c19bbeb126db5a5d46055f839", default-features = false }
+bevy_animation_graph = { git = "https://github.com/mbrea-c/bevy_animation_graph.git", default-features = false }
+bevy_animation_graph_editor = { git = "https://github.com/mbrea-c/bevy_animation_graph.git", default-features = false }
 bevy_ahoy = "0.1.0-rc.6"
 bevy_enhanced_input = "0.24.1"
 avian3d = { version = "0.6.0-rc.1", default-features = false, features = [

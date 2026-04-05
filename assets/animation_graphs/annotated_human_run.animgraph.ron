@@ -56,7 +56,7 @@
                                     value: (
                                         event: StringId("LeftFootDown"),
                                         start_time: 0.166,
-                                        end_time: 0.17,
+                                        end_time: 0.166,
                                     ),
                                 ),
                                 (

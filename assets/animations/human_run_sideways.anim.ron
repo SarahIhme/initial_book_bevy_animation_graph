@@ -4,5 +4,27 @@
         animation_name: "RunSideways",
     ),
     skeleton: "skeletons/human_skeleton.skn.ron",
-    event_tracks: {},
+    event_tracks: {
+        "FootDown": (
+            name: "FootDown",
+            events: [
+                (
+                    id: "4519a290-692c-4802-a864-40fb8e7e40d2",
+                    value: (
+                        event: StringId("LeftFootDown"),
+                        start_time: 0.166,
+                        end_time: 0.166,
+                    ),
+                ),
+                (
+                    id: "d923eed2-228a-4a60-9c3c-ee5e59890b1f",
+                    value: (
+                        event: StringId("RightFootDown"),
+                        start_time: 0.75,
+                        end_time: 0.75,
+                    ),
+                ),
+            ],
+        ),
+    },
 )

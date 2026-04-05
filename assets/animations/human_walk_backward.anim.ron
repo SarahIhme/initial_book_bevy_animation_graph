@@ -4,5 +4,27 @@
         animation_name: "WalkBackward",
     ),
     skeleton: "skeletons/human_skeleton.skn.ron",
-    event_tracks: {},
+    event_tracks: {
+        "FootDown": (
+            name: "FootDown",
+            events: [
+                (
+                    id: "da3d5c25-ca3a-451e-aa3a-5ebcc18ce9bd",
+                    value: (
+                        event: StringId("LeftFootDown"),
+                        start_time: 0.0,
+                        end_time: 0.0,
+                    ),
+                ),
+                (
+                    id: "7de2e74a-1778-478f-b00e-d9000255f800",
+                    value: (
+                        event: StringId("RightFootDown"),
+                        start_time: 0.5,
+                        end_time: 0.5,
+                    ),
+                ),
+            ],
+        ),
+    },
 )
