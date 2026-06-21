@@ -14,7 +14,10 @@ use bevy_animation_graph::{
     core::{
         animated_scene::{AnimatedSceneHandle, AnimatedSceneInstance},
         animation_graph_player::AnimationGraphPlayer,
-        edge_data::DataValue,
+        edge_data::{
+            DataValue,
+            events::{AnimationEvent, EventQueue},
+        },
     },
 };
 use bevy_animation_graph_book::locomotion_blend_parameters_node::LocomotionBlendParametersNode;
@@ -148,6 +151,7 @@ fn pass_speed_to_animgraph(
     velocity: Single<&LinearVelocity, With<CharacterController>>,
     human_character: Query<&AnimatedSceneInstance, With<CharacterControllerScene>>,
     mut animation_players: Query<&mut AnimationGraphPlayer>,
+    keys: Res<ButtonInput<KeyCode>>,
 ) {
     let Ok(player_entity) = human_character.single().map(|i| i.player_entity()) else {
         return;
@@ -158,10 +162,16 @@ fn pass_speed_to_animgraph(
     };
     let velocity_vec = velocity.zx();
     let velocity_val = velocity_vec.length();
-    // println!("{velocity_val}");
+
+    let mut eq = EventQueue::default();
+    if keys.just_pressed(KeyCode::KeyP) {
+        println!("Fired punch");
+        eq.add_instant_event(AnimationEvent::TransitionToStateLabel("Punch".into()));
+    }
 
     player.set_input_data("speedVec", DataValue::from(velocity_vec));
     player.set_input_data("speed", DataValue::from(velocity_val));
+    player.set_input_data("driver_events", eq.into());
 }
 
 #[derive(Component, Default)]

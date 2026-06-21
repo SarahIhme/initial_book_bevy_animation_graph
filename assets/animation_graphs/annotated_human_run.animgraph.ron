@@ -8,6 +8,8 @@
                     clip: "animations/human_run.anim.ron",
                     override_duration: None,
                     override_interpolation: None,
+                    root_motion_mode: Disabled,
+                    root_motion_bone: None,
                 ),
             },
             should_debug: false,
@@ -31,13 +33,11 @@
             should_debug: false,
         ),
         (
-            id: "626f9eed-104f-42f9-9b13-fe333ec0596e",
-            name: "Run",
+            id: "c431ccd9-887a-496e-bc31-08380279b7be",
+            name: "Chain",
             inner: {
-                "bevy_animation_graph::builtin_nodes::ClipNode": (
-                    clip: "animations/human_run.anim.ron",
-                    override_duration: None,
-                    override_interpolation: None,
+                "bevy_animation_graph::builtin_nodes::ChainNode": (
+                    interpolation_period: 0.0,
                 ),
             },
             should_debug: false,
@@ -75,11 +75,15 @@
             should_debug: false,
         ),
         (
-            id: "c431ccd9-887a-496e-bc31-08380279b7be",
-            name: "Chain",
+            id: "626f9eed-104f-42f9-9b13-fe333ec0596e",
+            name: "Run",
             inner: {
-                "bevy_animation_graph::builtin_nodes::ChainNode": (
-                    interpolation_period: 0.0,
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_run.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                    root_motion_mode: Disabled,
+                    root_motion_bone: None,
                 ),
             },
             should_debug: false,
@@ -118,9 +122,9 @@
         node_positions: {
             "8c685820-0a63-4ca6-877f-31526a73083b": (177.37012, 33.892),
             "e6edfcf0-afde-413e-b4c7-bf8a0999fb81": (196.3905, 280.00076),
-            "626f9eed-104f-42f9-9b13-fe333ec0596e": (48.563354, 275.83563),
-            "e22f4637-b852-4523-a153-54e6d19d113c": (500.24683, 154.61565),
             "c431ccd9-887a-496e-bc31-08380279b7be": (357.03052, 142.15775),
+            "e22f4637-b852-4523-a153-54e6d19d113c": (500.24683, 154.61565),
+            "626f9eed-104f-42f9-9b13-fe333ec0596e": (48.563354, 275.83563),
         },
         input_position: (30.857666, 30.800964),
         output_position: (641.43854, 155.12799),

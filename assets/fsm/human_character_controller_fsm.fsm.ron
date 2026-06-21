@@ -3,49 +3,127 @@
         (
             id: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
             label: "Punch",
-            graph: "animation_graphs/human_punch.animgraph.ron",
-            state_transition: Some((
-                kind: Immediate,
-                ignore_external_events: false,
-                reset_target_state: true,
-            )),
+            graph: "animation_graphs/human_puch_to_move.animgraph.ron",
+            state_transition: None,
         ),
         (
             id: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
             label: "Idle",
             graph: "animation_graphs/idle.animgraph.ron",
-            state_transition: Some((
-                kind: Immediate,
-                ignore_external_events: false,
-                reset_target_state: true,
-            )),
+            state_transition: None,
         ),
         (
             id: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
             label: "Move",
-            graph: "animation_graphs/character_controller.animgraph.ron",
-            state_transition: Some((
-                kind: Immediate,
-                ignore_external_events: false,
-                reset_target_state: true,
-            )),
+            graph: "animation_graphs/movement_controller.animgraph.ron",
+            state_transition: None,
         ),
     ],
-    transitions: [],
-    start_state: "00000000-0000-0000-0000-000000000000",
+    transitions: [
+        (
+            id: "48765df7-a4e5-4608-86cd-7e69431ad24e",
+            source: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            target: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.5),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+        (
+            id: "67ed9cea-6cb0-4388-a0be-643772031d25",
+            source: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
+            target: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.5),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+        (
+            id: "6963d035-3310-493f-bd5a-f608e8206a4c",
+            source: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
+            target: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.5),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+        (
+            id: "98cad838-9613-4745-a08a-699f395c7a90",
+            source: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
+            target: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.5),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+        (
+            id: "72f27fdc-19ec-4400-a1e3-e183f10190b4",
+            source: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
+            target: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.5),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+        (
+            id: "3eb9dd62-c771-435c-a250-30fa3bdfc3f4",
+            source: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            target: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.2),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+    ],
+    start_state: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
     node_spec: (
         input_times: [],
-        input_data: {},
-        output_time: false,
-        output_data: {},
-        input_order: {},
-        output_order: {},
+        input_data: {
+            "speedVec": Vec2,
+            "speed": F32,
+        },
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+        },
+        input_order: {
+            Data("speedVec"): 0,
+            Data("speed"): 1,
+        },
+        output_order: {
+            Data("pose"): 0,
+            Time: 1,
+        },
     ),
     editor_metadata: (
         states: {
-            "509ac9d3-0e38-4962-a53b-85f80efd16d3": (130.66058, -103.990295),
             "6339e21f-a061-4dd7-90f5-9018a6478fbb": (-145.51495, -103.43323),
-            "d7cfb660-e46d-443a-bd40-c26e8cfff565": (41.897217, 9.613037),
+            "d7cfb660-e46d-443a-bd40-c26e8cfff565": (-15.792847, 9.613037),
+            "509ac9d3-0e38-4962-a53b-85f80efd16d3": (130.66058, -103.990295),
         },
     ),
 )

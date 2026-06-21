@@ -19,6 +19,8 @@
                     clip: "animations/human_punch.anim.ron",
                     override_duration: None,
                     override_interpolation: None,
+                    root_motion_mode: Disabled,
+                    root_motion_bone: None,
                 ),
             },
             should_debug: false,
