@@ -1,6 +1,26 @@
 (
     nodes: [
         (
+            id: "fadd88ea-7f39-46bd-9552-22f866483c02",
+            name: "Morethan",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::CompareF32": (
+                    op: More,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "9c6ab363-b72b-4740-a283-a958f7be0991",
+            name: "Abs",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ConstF32": (
+                    constant: 0.1,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
             id: "0d2c3d12-c764-4091-8a4d-cd61992089a4",
             name: "FSM",
             inner: {
@@ -10,20 +30,85 @@
             },
             should_debug: false,
         ),
+        (
+            id: "db37e3e9-6ddf-4bf3-916b-e04579c29282",
+            name: "MergeEvents",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::MergeEventQueues": (),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "413899a1-8d0d-467e-8e00-5a32df269fac",
+            name: "Abs",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::AbsF32": (),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "d43dbeae-fe44-4b7a-b7dd-e28b99625eba",
+            name: "FireMove",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::FireEventNode": (
+                    event: TransitionToStateLabel("Move"),
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "5661acbf-7fa2-444f-86f3-b2c06bddc3f5",
+            name: "MergeEvents",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::CompareF32": (
+                    op: Less,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "8e81a771-ef66-4f4f-8385-2719c3c0f746",
+            name: "FireIdle",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::FireEventNode": (
+                    event: TransitionToStateLabel("Idle"),
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "dd3b622a-afac-476f-bbf3-089b20cc6c12",
+            name: "MergeEvents",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::MergeEventQueues": (),
+            },
+            should_debug: false,
+        ),
     ],
     edges_inverted: {
         OutputData("pose"): NodeData("0d2c3d12-c764-4091-8a4d-cd61992089a4", "pose"),
-        OutputTime: NodeTime("0d2c3d12-c764-4091-8a4d-cd61992089a4"),
-        NodeData("0d2c3d12-c764-4091-8a4d-cd61992089a4", "speedVec"): InputData(Passthrough("speedVec")),
+        NodeData("dd3b622a-afac-476f-bbf3-089b20cc6c12", "in_b"): NodeData("d43dbeae-fe44-4b7a-b7dd-e28b99625eba", "event"),
+        NodeData("413899a1-8d0d-467e-8e00-5a32df269fac", "in"): InputData(Passthrough("speed")),
+        NodeData("fadd88ea-7f39-46bd-9552-22f866483c02", "in_b"): NodeData("9c6ab363-b72b-4740-a283-a958f7be0991", "out"),
+        NodeData("5661acbf-7fa2-444f-86f3-b2c06bddc3f5", "in_b"): NodeData("9c6ab363-b72b-4740-a283-a958f7be0991", "out"),
         NodeData("0d2c3d12-c764-4091-8a4d-cd61992089a4", "speed"): InputData(Passthrough("speed")),
-        NodeData("0d2c3d12-c764-4091-8a4d-cd61992089a4", "driver_events"): InputData(Passthrough("driver_events")),
+        NodeData("db37e3e9-6ddf-4bf3-916b-e04579c29282", "in_b"): NodeData("8e81a771-ef66-4f4f-8385-2719c3c0f746", "event"),
+        NodeData("8e81a771-ef66-4f4f-8385-2719c3c0f746", "condition"): NodeData("5661acbf-7fa2-444f-86f3-b2c06bddc3f5", "out"),
+        NodeData("dd3b622a-afac-476f-bbf3-089b20cc6c12", "in_a"): InputData(Passthrough("user_events")),
+        OutputTime: NodeTime("0d2c3d12-c764-4091-8a4d-cd61992089a4"),
+        NodeData("db37e3e9-6ddf-4bf3-916b-e04579c29282", "in_a"): NodeData("dd3b622a-afac-476f-bbf3-089b20cc6c12", "out"),
+        NodeData("5661acbf-7fa2-444f-86f3-b2c06bddc3f5", "in_a"): NodeData("413899a1-8d0d-467e-8e00-5a32df269fac", "out"),
+        NodeData("0d2c3d12-c764-4091-8a4d-cd61992089a4", "speedVec"): InputData(Passthrough("speedVec")),
+        NodeData("fadd88ea-7f39-46bd-9552-22f866483c02", "in_a"): NodeData("413899a1-8d0d-467e-8e00-5a32df269fac", "out"),
+        NodeData("d43dbeae-fe44-4b7a-b7dd-e28b99625eba", "condition"): NodeData("fadd88ea-7f39-46bd-9552-22f866483c02", "out"),
+        NodeData("0d2c3d12-c764-4091-8a4d-cd61992089a4", "driver_events"): NodeData("db37e3e9-6ddf-4bf3-916b-e04579c29282", "out"),
     },
     io_spec: (
         input_times: [],
         input_data: {
-            Passthrough("driver_events"): EventQueue,
             Passthrough("speed"): F32,
             Passthrough("speedVec"): Vec2,
+            Passthrough("user_events"): EventQueue,
         },
         output_time: true,
         output_data: {
@@ -32,7 +117,7 @@
         input_order: {
             Data(Passthrough("speedVec")): 0,
             Data(Passthrough("speed")): 1,
-            Data(Passthrough("driver_events")): 2,
+            Data(Passthrough("user_events")): 2,
         },
         output_order: {
             Data("pose"): 0,
@@ -46,10 +131,18 @@
     },
     editor_metadata: (
         node_positions: {
-            "0d2c3d12-c764-4091-8a4d-cd61992089a4": (311.10468, 143.88486),
+            "fadd88ea-7f39-46bd-9552-22f866483c02": (171.3103, 467.1979),
+            "9c6ab363-b72b-4740-a283-a958f7be0991": (10.516541, 517.6656),
+            "0d2c3d12-c764-4091-8a4d-cd61992089a4": (394.87335, 151.20425),
+            "db37e3e9-6ddf-4bf3-916b-e04579c29282": (637.2313, 382.74292),
+            "413899a1-8d0d-467e-8e00-5a32df269fac": (15.265991, 362.35278),
+            "d43dbeae-fe44-4b7a-b7dd-e28b99625eba": (343.27606, 322.83002),
+            "5661acbf-7fa2-444f-86f3-b2c06bddc3f5": (172.02432, 322.8739),
+            "8e81a771-ef66-4f4f-8385-2719c3c0f746": (346.43964, 486.79498),
+            "dd3b622a-afac-476f-bbf3-089b20cc6c12": (484.2821, 367.06815),
         },
         input_position: (31.625244, 149.91858),
-        output_position: (571.33185, 152.84741),
+        output_position: (585.95123, 155.41254),
         input_param_order: {},
         input_time_order: {},
         output_data_order: {},

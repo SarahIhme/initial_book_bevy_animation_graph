@@ -1,0 +1,63 @@
+(
+    nodes: [
+        (
+            id: "cac7e366-ee28-4b4b-ae14-8f2087884b31",
+            name: "New node",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::ClipNode": (
+                    clip: "animations/human_jump.anim.ron",
+                    override_duration: None,
+                    override_interpolation: None,
+                    root_motion_mode: Disabled,
+                    root_motion_bone: None,
+                ),
+            },
+            should_debug: false,
+        ),
+        (
+            id: "094e6f68-cfea-4b47-af4e-a584b75606ab",
+            name: "ToIdle",
+            inner: {
+                "bevy_animation_graph::builtin_nodes::MapEventsNode": (
+                    map_from: AnimationClipFinished,
+                    map_to: TransitionToStateLabel("Idle"),
+                ),
+            },
+            should_debug: false,
+        ),
+    ],
+    edges_inverted: {
+        OutputData("pose"): NodeData("cac7e366-ee28-4b4b-ae14-8f2087884b31", "pose"),
+        OutputTime: NodeTime("cac7e366-ee28-4b4b-ae14-8f2087884b31"),
+        OutputData("driver_events"): NodeData("094e6f68-cfea-4b47-af4e-a584b75606ab", "events"),
+        NodeData("094e6f68-cfea-4b47-af4e-a584b75606ab", "events"): NodeData("cac7e366-ee28-4b4b-ae14-8f2087884b31", "events"),
+    },
+    io_spec: (
+        input_times: [],
+        input_data: {},
+        output_time: true,
+        output_data: {
+            "pose": Pose,
+            "driver_events": EventQueue,
+        },
+        input_order: {},
+        output_order: {
+            Data("pose"): 0,
+            Time: 1,
+            Data("driver_events"): 2,
+        },
+    ),
+    default_data: {},
+    editor_metadata: (
+        node_positions: {
+            "cac7e366-ee28-4b4b-ae14-8f2087884b31": (290.40662, 197.27249),
+            "094e6f68-cfea-4b47-af4e-a584b75606ab": (489.9231, 356.06528),
+        },
+        input_position: (56.16638, 167.34067),
+        output_position: (683.98663, 220.80597),
+        input_param_order: {},
+        input_time_order: {},
+        output_data_order: {},
+        output_pose_order: {},
+    ),
+)

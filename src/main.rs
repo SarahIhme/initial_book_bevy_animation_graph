@@ -14,10 +14,7 @@ use bevy_animation_graph::{
     core::{
         animated_scene::{AnimatedSceneHandle, AnimatedSceneInstance},
         animation_graph_player::AnimationGraphPlayer,
-        edge_data::{
-            DataValue,
-            events::{AnimationEvent, EventQueue},
-        },
+        edge_data::{DataValue, events::AnimationEvent},
     },
 };
 use bevy_animation_graph_book::locomotion_blend_parameters_node::LocomotionBlendParametersNode;
@@ -147,6 +144,20 @@ fn setup(
     ));
 }
 
+fn send_jump_command(
+    human_character: Query<&AnimatedSceneInstance, With<CharacterControllerScene>>,
+    mut animation_players: Query<&mut AnimationGraphPlayer>,
+) {
+    let Ok(player_entity) = human_character.single().map(|i| i.player_entity()) else {
+        return;
+    };
+
+    let Ok(mut player) = animation_players.get_mut(player_entity) else {
+        return;
+    };
+    player.send_event(AnimationEvent::TransitionToStateLabel("Jump".into()));
+}
+
 fn pass_speed_to_animgraph(
     velocity: Single<&LinearVelocity, With<CharacterController>>,
     human_character: Query<&AnimatedSceneInstance, With<CharacterControllerScene>>,
@@ -163,15 +174,19 @@ fn pass_speed_to_animgraph(
     let velocity_vec = velocity.zx();
     let velocity_val = velocity_vec.length();
 
-    let mut eq = EventQueue::default();
+    //let mut eq = EventQueue::default();
     if keys.just_pressed(KeyCode::KeyP) {
         println!("Fired punch");
-        eq.add_instant_event(AnimationEvent::TransitionToStateLabel("Punch".into()));
+        player.send_event(AnimationEvent::TransitionToStateLabel("Punch".into()));
+        //eq.add_instant_event(AnimationEvent::TransitionToStateLabel("Punch".into()));
+    }
+    if keys.just_pressed(KeyCode::Space) {
+        player.send_event(AnimationEvent::TransitionToStateLabel("Jump".into()));
     }
 
     player.set_input_data("speedVec", DataValue::from(velocity_vec));
     player.set_input_data("speed", DataValue::from(velocity_val));
-    player.set_input_data("driver_events", eq.into());
+    //player.set_input_data("user_events", eq.into());
 }
 
 #[derive(Component, Default)]

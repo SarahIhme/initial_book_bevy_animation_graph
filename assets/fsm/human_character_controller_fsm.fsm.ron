@@ -3,7 +3,7 @@
         (
             id: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
             label: "Punch",
-            graph: "animation_graphs/human_puch_to_move.animgraph.ron",
+            graph: "animation_graphs/human_punch_to_move.animgraph.ron",
             state_transition: None,
         ),
         (
@@ -18,19 +18,25 @@
             graph: "animation_graphs/movement_controller.animgraph.ron",
             state_transition: None,
         ),
+        (
+            id: "79f648fb-3357-4476-b8d2-588821158173",
+            label: "Jump",
+            graph: "animation_graphs/human_jump.animgraph.ron",
+            state_transition: None,
+        ),
     ],
     transitions: [
         (
-            id: "48765df7-a4e5-4608-86cd-7e69431ad24e",
-            source: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
-            target: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
+            id: "126e1058-8711-4434-b0d8-531f9e5b3a96",
+            source: "79f648fb-3357-4476-b8d2-588821158173",
+            target: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
             data: (
                 kind: Graph(
                     graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
-                    timed: Some(0.5),
+                    timed: Some(0.1),
                 ),
                 ignore_external_events: false,
-                reset_target_state: false,
+                reset_target_state: true,
             ),
         ),
         (
@@ -40,10 +46,10 @@
             data: (
                 kind: Graph(
                     graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
-                    timed: Some(0.5),
+                    timed: Some(0.1),
                 ),
                 ignore_external_events: false,
-                reset_target_state: false,
+                reset_target_state: true,
             ),
         ),
         (
@@ -73,6 +79,19 @@
             ),
         ),
         (
+            id: "e3552c5b-bd61-4cb7-81d3-157d22e40a6c",
+            source: "79f648fb-3357-4476-b8d2-588821158173",
+            target: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.1),
+                ),
+                ignore_external_events: false,
+                reset_target_state: true,
+            ),
+        ),
+        (
             id: "72f27fdc-19ec-4400-a1e3-e183f10190b4",
             source: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
             target: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
@@ -86,6 +105,19 @@
             ),
         ),
         (
+            id: "d91d7d7b-70cc-42a3-88ec-ec812f3e42f2",
+            source: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            target: "79f648fb-3357-4476-b8d2-588821158173",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.1),
+                ),
+                ignore_external_events: false,
+                reset_target_state: true,
+            ),
+        ),
+        (
             id: "3eb9dd62-c771-435c-a250-30fa3bdfc3f4",
             source: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
             target: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
@@ -96,6 +128,32 @@
                 ),
                 ignore_external_events: false,
                 reset_target_state: false,
+            ),
+        ),
+        (
+            id: "48765df7-a4e5-4608-86cd-7e69431ad24e",
+            source: "d7cfb660-e46d-443a-bd40-c26e8cfff565",
+            target: "509ac9d3-0e38-4962-a53b-85f80efd16d3",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.5),
+                ),
+                ignore_external_events: false,
+                reset_target_state: false,
+            ),
+        ),
+        (
+            id: "44d94432-5999-4686-9f2c-80d230f36522",
+            source: "6339e21f-a061-4dd7-90f5-9018a6478fbb",
+            target: "79f648fb-3357-4476-b8d2-588821158173",
+            data: (
+                kind: Graph(
+                    graph: "animation_graphs/blend_transitions_fsm.animgraph.ron",
+                    timed: Some(0.1),
+                ),
+                ignore_external_events: false,
+                reset_target_state: true,
             ),
         ),
     ],
@@ -121,9 +179,11 @@
     ),
     editor_metadata: (
         states: {
-            "6339e21f-a061-4dd7-90f5-9018a6478fbb": (-145.51495, -103.43323),
-            "d7cfb660-e46d-443a-bd40-c26e8cfff565": (-15.792847, 9.613037),
-            "509ac9d3-0e38-4962-a53b-85f80efd16d3": (130.66058, -103.990295),
+            "509ac9d3-0e38-4962-a53b-85f80efd16d3": (122.74823, -115.49979),
+            "6339e21f-a061-4dd7-90f5-9018a6478fbb": (-148.92535, -114.62805),
+            "d7cfb660-e46d-443a-bd40-c26e8cfff565": (-59.84082, 44.604675),
+            "694ed813-97db-4609-b93d-f4c6582a02b2": (273.81165, 0.74835205),
+            "79f648fb-3357-4476-b8d2-588821158173": (139.15662, 20.540283),
         },
     ),
 )

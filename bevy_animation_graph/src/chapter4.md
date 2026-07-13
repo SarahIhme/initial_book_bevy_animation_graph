@@ -7,7 +7,7 @@ This chapter assumes you have forward, backward and sideways walk and run animat
 ## Create animation graph 
 
 - create blend node with all of them
-- add event annotation to it TESTING
+- add event annotation to it
 - make a scene with it
 - use it with bevy_ahoy
 
@@ -21,7 +21,8 @@ This chapter assumes you have omnidirectional motion in an animation graph, as w
 
 ## Create FSM
 
-- make FSM to change from Idle/moving/punching
+- make FSM to change from Idle/moving/punching/jump
 - make a node which send events coming in further (punch for exmaple), and adds idle/moving change based on speed
+- separate state for idle/jump after as intermediate state so that it cannot 
 
 And that should be it!!!
